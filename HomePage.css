@@ -1,0 +1,42 @@
+/*Font and all */
+* {
+    font-size: 26px;
+    background-color:#ccf7fc;
+}
+
+
+/* Nav for desktop*/
+.navbar {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    position: fixed;
+    height: 100%;
+    width: 105px;
+    border-right: 2.5px solid black;
+    border-top: 2.5px solid black;
+    margin-left: -8px;
+    padding: 10px;
+    top: -10px;
+    background-color: antiquewhite;
+}
+/* Background for items*/
+.navbar * {
+    background-color: inherit;
+}
+
+body .navbaritem a{
+    text-decoration: none;
+    background-color: inherit;
+    color: black;
+}
+
+.Box {
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px gray;
+    margin-left: 125px;
+    align-content: center;
+    justify-items: center;
+}
+
