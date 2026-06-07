@@ -5,6 +5,13 @@
 }
 
 /* Logo */
+.LogoName{
+    font-size: 30px;
+    font-style: italic;
+    font-weight: bold;
+    color: rgb(7, 254, 254);
+}
+
 .Logo{
     width: 100px;
     height: 100px;
@@ -24,11 +31,11 @@
     width: 100%;
     height: 85px;
 
-    background-color: #bdd6f7;
+    background-color: #eef2e0;
 
     justify-content: space-evenly;
-    border-bottom: 2.5px solid black;
-    border-radius: 0 0 10px 10px;
+    border-bottom: 1.5px solid black;
+    border-radius: 0 0 5px 5px;
 }
 
 .navbar a{
@@ -36,14 +43,28 @@
     color: inherit;
 }
 
+/* Scrolling and navbar fix*/
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+}
+
 /* Making space for nav bar so no overlap happens */
 main{
     margin-top: 100px;
 }
 
+/* Space between the elements in main */
+main .Offer, 
+main .About, 
+main .Contact, 
+main .Sign {
+    margin-top: 25px;
+}
+
 /* Background colour and image */
 body {
-    background-color: #ccf7fc;
+    background-color: #c4c4c4;
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -52,7 +73,6 @@ body {
 .Welcome {
     font-size: 40px;
     text-align: center;
-    margin-bottom: -10px;
 }
 
 /*Discover text*/
@@ -72,7 +92,6 @@ body {
     flex-direction: row;
     align-items: center;
     gap: 40px;
-    margin-top: 75px;
 }
 
 .AboutPara{
@@ -81,7 +100,6 @@ body {
 
 .AboutPara b{
     display: block;
-    margin-bottom: 10px;
 }
 
 .AboutImg{
@@ -92,5 +110,42 @@ body {
 
 .Contact{
     margin-top: 60px;
+}
+
+/* Error message*/
+#errors{
+    color: rgb(243, 79, 79);
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Form Style*/
+#form button {
+    width: 100%;
+    max-width: 200px;
+    height: 45px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#form input {
+    max-width: 400px;
+    height: 45px;
+    padding: 10px;
+    border: 1px solid #b0b0b0;
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+    box-sizing: border-box;
+}
+
+#form label {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 45px;
+    background-color: #555555;
+    border-radius: 4px;
 }
 
