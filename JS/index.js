@@ -40,11 +40,10 @@ form.addEventListener('submit', (e) => {
 }) // Prevents form from being submitted, if have errors
 
 
-// Script for Modal
+// Script for Sing up Modal
 const sign_open = document.getElementById('sign_open')
 const modal_container = document.getElementById('modal_container')
 const sign_close = document.getElementById('sign_close')
-const login = document.getElementById('login')
 
 sign_open.addEventListener('click', () => {
     modal_container.classList.add('show')
@@ -54,6 +53,12 @@ sign_close.addEventListener('click', () => {
     modal_container.classList.remove('show')
 })
 
-login.addEventListener('click', () => {
-    modal_container.classList.remove('show')
-})
+// Script for Login Modal
+const login = document.getElementById('login')
+const login_modal_container = document.getElementById('login_modal_container')
+
+login.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal_container.classList.remove('show');
+    login_modal_container.classList.add('show');
+});

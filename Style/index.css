@@ -202,9 +202,89 @@ body {
     margin-bottom: 20px;
     text-align: center;
 }
+
 #sign_open{
     background-color: #10b981;
     color: white;
 
     border-radius: 10px;
+}
+
+.login-modal-container{
+    /* Wrap the entire screen */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Transulent */
+    height: 100vh;
+    width: 100vw;
+    z-index: 10;
+
+    /* Middle of the screen*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0; /* Hiding Modal */
+    pointer-events: none; /* Avoid Modal from disallowing clicking */
+
+    transition: opacity 0.3s ease;
+}
+
+.login_modal {
+    background-color: #ffffff;
+    max-width: 450px;
+    width: 90%;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+    max-height: 90vh; 
+    overflow-y: auto;
+}
+
+.login_modal h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#login_modal_container.show{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Login form style*/
+/* Form Style*/
+#login_form form > div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+#login_form button {
+    width: 100%;
+    max-width: 200px;
+    height: 45px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#login_form input {
+    max-width: 400px;
+    height: 45px;
+    padding: 10px;
+    border: 1px solid #b0b0b0;
+    border-radius: 0 4px 4px 0;
+    box-sizing: border-box;
+}
+
+#login_form label {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 45px;
+    background-color: #555555;
+    border-radius: 4px;
 }
