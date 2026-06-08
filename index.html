@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width = device-width ,initial-scale = 1.0">
+    <meta name="viewport" content="width=device-width ,initial-scale=1.0">
     <title>EarlyBird</title>
     <link rel="stylesheet" href="Style/index.css">
 </head>
@@ -15,7 +15,61 @@
         <p><a href="#offer">What We Offer</a></p>
         <p><a href="#about">About Us</a></p>
         <p><a href="#contact">Contact us</a></p>
-        <p><a href="#sign">Sign Up</a></p>
+        <button id="sign_open">Sign up</button>
+        <!-- Sign up modal/pop up -->
+        <section class="modal-container" id="modal_container">
+            <div class="modal">
+                <h1>Sign up</h1>
+                <div id="errors"></div>
+                <form id="form">
+                    <div>
+                        <label for="username-input">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#e3e3e3">
+                                <path
+                                    d="M367-527q-47-47-47-113t47-113q47-47 113-47t113 47q47 47 47 113t-47 113q-47 47-113 47t-113-47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z" />
+                            </svg>
+                        </label>
+                        <input type="text" name="username" id="usernameinput" placeholder="Username">
+                    </div>
+
+                    <div>
+                        <label for="email-input">
+                            <span>@</span>
+                        </label>
+                        <input type="email" name="email" id="emailinput" placeholder="Email">
+                    </div>
+
+                    <div>
+                        <label for="password-input">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#e3e3e3">
+                                <path
+                                    d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm296.5-223.5Q560-327 560-360t-23.5-56.5Q513-440 480-440t-56.5 23.5Q400-393 400-360t23.5 56.5Q447-280 480-280t56.5-23.5ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80Z" />
+                            </svg>
+                        </label>
+                        <input type="password" name="password" id="passwordinput" placeholder="Password">
+                    </div>
+
+                    <div>
+                        <label for="repeatpassword-input">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#e3e3e3">
+                                <path
+                                    d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm296.5-223.5Q560-327 560-360t-23.5-56.5Q513-440 480-440t-56.5 23.5Q400-393 400-360t23.5 56.5Q447-280 480-280t56.5-23.5ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80Z" />
+                            </svg>
+                        </label>
+                        <input type="password" name="repeatpassword" id="repeatpasswordinput"
+                            placeholder="Repeat Password">
+                    </div>
+
+                    <button type="submit">Sign Up</button>
+                    <button type="button" id="sign_close">Close</button>
+                    <p id="login">Already have an account? <a href="">Login</a></p>
+                </form>
+            </div>
+        </section>
+
         <img class="Logo" src="Assets/Pictures/PixelLogoFrame.png" alt="EarlyBird Logo">
     </nav>
 
@@ -34,20 +88,20 @@
         </section>
 
         <section class="Offer" id="offer">
-            <p>
+            <div>
                 What we offer:
-            <ul class="list">
-                <li>
-                    A learning experience focused on improving skills not taught directly in schools
-                </li>
-                <li>
-                    Mulitple and different types of learning to help oneself
-                </li>
-                <li>
-                    Easy and accessible content for everyone
-                </li>
-            </ul>
-            </p>
+                <ul class="list">
+                    <li>
+                        A learning experience focused on improving skills not taught directly in schools
+                    </li>
+                    <li>
+                        Mulitple and different types of learning to help oneself
+                    </li>
+                    <li>
+                        Easy and accessible content for everyone
+                    </li>
+                </ul>
+            </div>
         </section>
 
         <section class="About" id="about">
@@ -64,60 +118,14 @@
             <div>
                 <p>For any inquiries, contact us at either:</p>
                 <ol>
-                    <li><p>+98-XXXX XXXX</p></li>
-                    <li><p>LegitEmail@gmail.com</p></li>
+                    <li>
+                        <p>+98-XXXX XXXX</p>
+                    </li>
+                    <li>
+                        <p>LegitEmail@gmail.com</p>
+                    </li>
                 </ol>
             </div>
-        </section>
-
-        <section class="Sign" id="sign">
-            <h1 class="">Sign up</h1>
-            <div id="errors"></div>
-            <form id="form">
-                <div>
-                    <label for="username-input">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                            fill="#e3e3e3">
-                            <path
-                                d="M367-527q-47-47-47-113t47-113q47-47 113-47t113 47q47 47 47 113t-47 113q-47 47-113 47t-113-47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z" />
-                        </svg>
-                    </label>
-                    <input type="text" name="username" id="usernameinput" placeholder="Username">
-                </div>
-
-                <div>
-                    <label for="email-input">
-                        <span>@</span>
-                    </label>
-                    <input type="email" name="email" id="emailinput" placeholder="Email">
-                </div>
-
-                <div>
-                    <label for="password-input">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                            fill="#e3e3e3">
-                            <path
-                                d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm296.5-223.5Q560-327 560-360t-23.5-56.5Q513-440 480-440t-56.5 23.5Q400-393 400-360t23.5 56.5Q447-280 480-280t56.5-23.5ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80Z" />
-                        </svg>
-                    </label>
-                    <input type="password" name="password" id="passwordinput" placeholder="Password">
-                </div>
-
-                <div>
-                    <label for="repeatpassword-input">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                            fill="#e3e3e3">
-                            <path
-                                d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm296.5-223.5Q560-327 560-360t-23.5-56.5Q513-440 480-440t-56.5 23.5Q400-393 400-360t23.5 56.5Q447-280 480-280t56.5-23.5ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80Z" />
-                        </svg>
-                    </label>
-                    <input type="password" name="repeatpassword" id="repeatpasswordinput" placeholder="Repeat Password">
-                </div>
-
-                <button type="submit">Sign Up</button>
-
-                <p>Already have an account? <a href="HomePage.html">Login</a></p>
-            </form>
         </section>
 
     </main>

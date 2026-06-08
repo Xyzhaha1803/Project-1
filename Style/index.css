@@ -5,11 +5,11 @@
 }
 
 /* Logo */
-.LogoName{
+.LogoName {
     font-size: 30px;
     font-style: italic;
     font-weight: bold;
-    color: rgb(7, 254, 254);
+    color: #0284c7;
 }
 
 .Logo{
@@ -29,18 +29,19 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 85px;
+    height: 90px;
 
-    background-color: #eef2e0;
+    background-color: #ffffff;
 
     justify-content: space-evenly;
-    border-bottom: 1.5px solid black;
+    border-bottom: 2px solid #e2e8f0;
     border-radius: 0 0 5px 5px;
 }
 
-.navbar a{
+.navbar a {
     text-decoration: none;
-    color: inherit;
+    color: #4a5568;
+    font-weight: 600;
 }
 
 /* Scrolling and navbar fix*/
@@ -51,39 +52,40 @@ html {
 
 /* Making space for nav bar so no overlap happens */
 main{
-    margin-top: 100px;
+    margin-top: 75px;
+    padding: 20px;
 }
 
-/* Space between the elements in main */
-main .Offer, 
-main .About, 
-main .Contact, 
-main .Sign {
-    margin-top: 25px;
+main section {
+    margin-top: 50px; /* Consistent space between sections */
 }
 
-/* Background colour and image */
+/* Background colour */
 body {
-    background-color: #c4c4c4;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color: #f7f9f3;
+    color: #333333;
 }
 
-/* Welcome text */
+/* Sections */
 .Welcome {
     font-size: 40px;
     text-align: center;
+    font-weight: bold;
+    color: #1e3a8a;
 }
 
 /*Discover text*/
 .Discover {
     text-align: center;
     padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* list */
 .list { 
-    margin-top: -10px;
+    margin-top: 10px;
+    padding-left: 20px;
 }
 
 /* About text */
@@ -100,11 +102,14 @@ body {
 
 .AboutPara b{
     display: block;
+    margin-bottom: 10px;
 }
 
 .AboutImg{
     flex: 0.5; /* Flex box space*/
+    max-width: 350px;
     height: auto;
+    border: 2px solid #555555;
     border-radius: 16px;
 }
 
@@ -114,12 +119,17 @@ body {
 
 /* Error message*/
 #errors{
-    color: rgb(243, 79, 79);
+    color: #ef4444;
     font-weight: bold;
     margin-bottom: 15px;
 }
 
 /* Form Style*/
+#form form > div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
 #form button {
     width: 100%;
     max-width: 200px;
@@ -133,7 +143,6 @@ body {
     height: 45px;
     padding: 10px;
     border: 1px solid #b0b0b0;
-    border-left: none;
     border-radius: 0 4px 4px 0;
     box-sizing: border-box;
 }
@@ -149,3 +158,53 @@ body {
     border-radius: 4px;
 }
 
+/* Modal */
+.modal-container{
+    /* Wrap the entire screen */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Transulent */
+    height: 100vh;
+    width: 100vw;
+    z-index: 10;
+
+    /* Middle of the screen*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0; /* Hiding Modal */
+    pointer-events: none; /* Avoid Modal from disallowing clicking */
+
+    transition: opacity 0.3s ease;
+}
+
+.modal-container.show{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal{
+    background-color: #ffffff;
+    max-width: 450px;
+    width: 90%;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+    max-height: 90vh; 
+    overflow-y: auto;
+}
+
+.modal h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+#sign_open{
+    background-color: #10b981;
+    color: white;
+
+    border-radius: 10px;
+}

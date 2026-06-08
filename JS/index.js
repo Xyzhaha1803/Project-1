@@ -38,3 +38,22 @@ form.addEventListener('submit', (e) => {
         error.innerHTML = ""
     }
 }) // Prevents form from being submitted, if have errors
+
+
+// Script for Modal
+const sign_open = document.getElementById('sign_open')
+const modal_container = document.getElementById('modal_container')
+const sign_close = document.getElementById('sign_close')
+const login = document.getElementById('login')
+
+sign_open.addEventListener('click', () => {
+    modal_container.classList.add('show')
+})
+
+sign_close.addEventListener('click', () => {
+    modal_container.classList.remove('show')
+})
+
+login.addEventListener('click', () => {
+    modal_container.classList.remove('show')
+})
