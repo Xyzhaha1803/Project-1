@@ -63,7 +63,7 @@
                             placeholder="Repeat Password">
                     </div>
 
-                    <button type="submit">Sign Up</button>
+                    <button type="submit" id="Signupbutton">Sign Up</button>
                     <button type="button" id="sign_close">Close</button>
                     <p>Already have an account?<button id="login" type="button">Login</button></p>
                 </form>
@@ -76,10 +76,8 @@
                 <h1>Login</h1>
                 <div id="login_errors"></div>
 
-                <!-- Form opens here, wrapping all children elements cleanly -->
                 <form id="login_form">
 
-                    <!-- Username container box -->
                     <div>
                         <label for="loginusername_input">
                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
@@ -89,9 +87,8 @@
                             </svg>
                         </label>
                         <input type="text" name="username" id="loginusername_input" placeholder="Username">
-                    </div> <!-- Closed this div correctly -->
+                    </div>
 
-                    <!-- Password container box -->
                     <div>
                         <label for="loginpassword_input">
                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
@@ -103,12 +100,11 @@
                         <input type="password" name="password" id="loginpassword_input" placeholder="Password">
                     </div>
 
-                    <!-- Action button controls inside the form -->
-                    <button type="submit">Login</button>
+                    <button type="submit" id="Loginsubmit">Login</button>
                     <button type="button" id="login_close">Close</button>
                     <p>Don't have an account? <button type="button" id="switch_to_signup">Sign Up</button></p>
 
-                </form> <!-- Form closes here safely -->
+                </form>
             </div>
         </section>
 

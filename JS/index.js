@@ -56,9 +56,39 @@ sign_close.addEventListener('click', () => {
 // Script for Login Modal
 const login = document.getElementById('login')
 const login_modal_container = document.getElementById('login_modal_container')
+const login_close = document.getElementById('login_close')
+const switch_to_signup = document.getElementById('switch_to_signup')
 
 login.addEventListener('click', (e) => {
+    e.preventDefault()
+    modal_container.classList.remove('show')
+    login_modal_container.classList.add('show')
+})
+
+login_close.addEventListener('click', () => {
+    login_modal_container.classList.remove('show')
+})
+
+switch_to_signup.addEventListener('click', () => {
+    login_modal_container.classList.remove('show')
+    modal_container.classList.add('show')
+})
+
+// Script for login form validation
+const login_form = document.getElementById('login_form')
+const loginusername_input = document.getElementById('loginusername_input')
+const loginpassword_input = document.getElementById('loginpassword_input')
+const login_errors = document.getElementById('login_errors')
+
+let adminUser = "Admin" // Example; ask cher on how to do normally
+let adminPassword = "12345"
+
+login_form.addEventListener('submit', (e) => {
     e.preventDefault();
-    modal_container.classList.remove('show');
-    login_modal_container.classList.add('show');
-});
+
+    if (loginusername_input.value === adminUser && loginpassword_input.value === adminPassword){
+        window.location.href = "Pages/HomePage.html"
+    } else {
+        login_errors.innerText = "Incorrect Username and/or Password";
+    }
+})

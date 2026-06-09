@@ -255,7 +255,6 @@ body {
 }
 
 /* Login form style*/
-/* Form Style*/
 #login_form form > div {
     display: flex;
     align-items: center;
@@ -287,4 +286,10 @@ body {
     height: 45px;
     background-color: #555555;
     border-radius: 4px;
+}
+
+#login_errors{
+    color: #ef4444;
+    font-weight: bold;
+    margin-bottom: 15px;
 }
