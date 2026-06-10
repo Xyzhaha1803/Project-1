@@ -3,13 +3,63 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width = device-width ,initial-scale = 1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>EarlyBird Library</title>
-        <link rel="stylesheet" href="Library.css">
+        <link rel="stylesheet" href="../Style/Library.css">
     </head>
 
     <body>
-        <script src="ProjectCodeJS.js"></script>
+
+        <nav class="navbar">
+            <p class="LogoName">EB</p>
+            <p class="navbaritem" id="home"><a href="HomePage.html">Home</a></p>
+            <p class="navbaritem" id="profile"><a href="Profile.html">Profile</a></p>
+            <p class="navbaritem" id="games"><a href="Games.html">Games</a></p>
+        </nav>
+
+        <main class="mainLibrary">
+
+            <h1 class="PageTitle">Library</h1>
+            <p class="PageSubTitle">Find a book and start reading today!</p>
+
+            <!-- Search Bar-->
+            <div class="SearchBar">
+                <input type="text" id="searchInput" placeholder="Search for a Book...">
+                <button id="searchButton">Search</button>
+            </div>
+
+            <!-- Status Message -->
+            <p class="StatusMsg" id="statusMsg"></p>
+
+            <!-- Book Grid-->
+            <div class="BookGrid" id="bookGrid"></div>
+
+            <!-- Reader Modal -->
+            <div class="reader-overlay" id="reader_Overlay">
+                <div class="reader-modal">
+
+                    <div class="reader-header">
+                        <h2 id="reader_Title">Book Title</h2>
+                        <button class="reader-close" id="reader_Close">Close</button>
+                    </div>
+
+                    <div class="reader-controls">
+                        <label for="fontSizeRange">Text size</label>
+                        <input type="range" id="fontSizeRange" min="10" max="30" value="20">
+                    </div>
+
+                    <div class="reader-content" id="reader_Content">
+                        <p class="reader-loading">Loading book...</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+        <script src="../JS/Library.js"></script>
+
     </body>
 
 
