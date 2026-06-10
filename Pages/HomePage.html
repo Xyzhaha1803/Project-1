@@ -3,27 +3,59 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width = device-width ,initial-scale = 1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>EarlyBird Home Page</title>
-        <link rel="stylesheet" href="HomePage.css">
+        <link rel="stylesheet" href="../Style/HomePage.css">
     </head>
 
     <body>
         <nav class="navbar">
-            <p class="navbaritem" id="#profile"><a href="Profile.html">Profile</a></p>
-            <p class="navbaritem" id="#home"><a href="HomePage.html">Home</a></p>
-            <p class="navbaritem" id="#library"><a href="Library.html">Library</a></p>
-            <p class="navbaritem" id="#games"><a href="Games.html">Games</a></p>
+            <p class="LogoName">EB</p>
+            <p class="navbaritem" id="profile"><a href="Profile.html">Profile</a></p>
+            <p class="navbaritem" id="library"><a href="Library.html">Library</a></p>
+            <p class="navbaritem" id="games"><a href="Games.html">Games</a></p>
+            <p class="navbaritem" id="profile"><a href="Profile.html">Profile</a></p>
         </nav>
 
         <main class="mainHome">
-            <section class="Box">
-                <p>Box1</p>
-            </section>
 
+            <h1 class="Dashboard">Dashboard</h1>
+
+            <div class="BoxGrid">
+
+                <section class="Box">
+                    <!-- Goes to Library -->
+                    <h2 class="BoxTitle">Library</h2>
+                    <p class="BoxDescription">Browse books and reading materials.</p>
+                    <a href="Library.html" class="BoxLink">Read -></a>
+                </section>
+
+                <section class="Box">
+                    <!-- Goes to Games -->
+                    <h2 class="BoxTitle">Puzzles</h2>
+                    <p class="BoxDescription">Solve puzzles and challenge your mind.</p>
+                    <a href="Games.html" class="BoxLink">Play Now -></a>
+                </section>
+
+                <section class="Box">
+                    <!-- Goes to Games-->
+                    <h2 class="BoxTitle">Chess</h2>
+                    <p class="BoxDescription">Learn and practise chess.</p>
+                    <a href="Games.html" class="BoxLink">Start Game -></a>
+                </section>
+
+                <section class="Box">
+                    <!-- Goes to Profile -->
+                    <h2 class="BoxTitle">Progress</h2>
+                    <p class="BoxDescription">Track your progress.</p>
+                    <a href="Profile.html" class="BoxLink">View Progress -></a>
+                </section>
+
+            </div>
+            
         </main>
 
-        <script src="ProjectCodeJS.js"></script>
+        <script src="../JS/ProjectCodeJS.js"></script>
     </body>
 
 

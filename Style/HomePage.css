@@ -1,42 +1,139 @@
-/*Font and all */
+/* Font and background color*/
 * {
-    font-size: 26px;
-    background-color:#ccf7fc;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-
-
-/* Nav for desktop*/
+ 
+body {
+    font-size: 26px;
+    letter-spacing: 0.4px;
+    background-color: #f7f9f3;
+    color: #333333;
+}
+ 
+/* Navbar */
 .navbar {
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
+    align-items: center;
+    gap: 16px;
+
     position: fixed;
+    top: 0;
+    left: 0;
     height: 100%;
-    width: 105px;
-    border-right: 2.5px solid black;
-    border-top: 2.5px solid black;
-    margin-left: -8px;
-    padding: 10px;
-    top: -10px;
-    background-color: antiquewhite;
+    width: 150px;
+    padding: 20px 10px;
+ 
+    background-color: #ffffff;
+    border-right: 2px solid #e2e8f0;
+    border-radius: 0 12px 12px 0;
+    z-index: 1;
 }
-/* Background for items*/
-.navbar * {
+ 
+.LogoName{
+    font-size: 26px;
+    font-style: italic;
+    font-weight: bold;
+    color: #0284c7;
+    text-align: center;
+}
+ 
+.navbar *{
     background-color: inherit;
 }
-
-body .navbaritem a{
+ 
+.navbaritem{
+    width: 100%;
+    text-align: center;
+}
+ 
+.navbaritem a{
+    display: block;
     text-decoration: none;
-    background-color: inherit;
-    color: black;
+    color: #4a5568;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px 6px;
+    border-radius: 8px;
 }
-
+ 
+.navbaritem a:hover{
+    background-color: #e0f2fe;
+    color: #0284c7;
+}
+ 
+/* Main Content */
+.mainHome{
+    margin-left: 150px; /* Space for navbar*/
+    padding: 30px 60px;
+}
+ 
+.Dashboard {
+    font-size: 36px;
+    font-weight: bold;
+    color: #1e3a8a;
+    margin-bottom: 32px;
+    letter-spacing: 1px;
+}
+ 
+/* Grid for ze box */
+.BoxGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+ 
+/* Individual Boxseses */
 .Box {
-    border: 2px solid black;
-    border-radius: 10px;
-    box-shadow: 5px 5px 10px gray;
-    margin-left: 125px;
-    align-content: center;
-    justify-items: center;
+    background-color: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 14px;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.06);
+    padding: 28px 20px;
+ 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+ 
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Trans for hover tings */
 }
-
+ 
+.Box:hover {
+    transform: translateY(-4px); /* Shifts box upwards by 4px in the y-axis classic*/
+    box-shadow: 6px 8px 15px rgba(0, 0, 0, 0.1);
+}
+ 
+.BoxIcon {
+    font-size: 32px;
+    line-height: 1;
+}
+ 
+.BoxTitle {
+    font-size: 26px;
+    font-weight: bold;
+    color: #1e3a8a;
+}
+ 
+.BoxDescription {
+    font-size: 20px;
+    color: #64748b;
+    line-height: 1.5; /* Look fancy */
+    flex: 1; /* Take whole space */
+}
+ 
+.BoxLink {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #0284c7;
+    text-decoration: none;
+}
+ 
+.BoxLink:hover {
+    color: #1e3a8a;
+}
+ 

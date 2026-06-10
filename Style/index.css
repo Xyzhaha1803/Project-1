@@ -4,6 +4,12 @@
     letter-spacing: 1px;
 }
 
+/* Background colour */
+body {
+    background-color: #f7f9f3;
+    color: #333333;
+}
+
 /* Logo */
 .LogoName {
     font-size: 30px;
@@ -38,14 +44,25 @@
     border-radius: 0 0 5px 5px;
 }
 
-.navbar a {
+.navbar a{
     text-decoration: none;
     color: #4a5568;
     font-weight: 600;
 }
 
+.navbaritem a{
+    display: block;
+    color: #4a5568;
+    border-radius: 8px;
+}
+
+.navbaritem a:hover{
+    background-color: #e0f2fe;
+    color: #0284c7;
+}
+
 /* Scrolling and navbar fix*/
-html {
+html{
     scroll-behavior: smooth;
     scroll-padding-top: 110px;
 }
@@ -56,18 +73,12 @@ main{
     padding: 20px;
 }
 
-main section {
+main section{
     margin-top: 50px; /* Consistent space between sections */
 }
 
-/* Background colour */
-body {
-    background-color: #f7f9f3;
-    color: #333333;
-}
-
 /* Sections */
-.Welcome {
+.Welcome{
     font-size: 40px;
     text-align: center;
     font-weight: bold;
