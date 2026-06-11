@@ -9,19 +9,18 @@ const form = document.getElementById('form')
 const error = document.getElementById('errors')
 
 form.addEventListener('submit', (e) => {
-    let errors = []
+    let errors = [];
 
     // Username Validation
-    if (username.value === "" || username.value == null){
-        errors.push("Username is required")
+    if (username.value === "" || username.value == null) {
+        errors.push("Username is required");
     }
-
 
     // Email Validation
     if (email.value === "" || !email.value.includes('@')) {
         errors.push("Please enter a valid email address");
     }
-    
+
     // Password Validation
     if (password.value.length < 6) {
         errors.push("Password must be at least 6 characters long");
@@ -31,13 +30,32 @@ form.addEventListener('submit', (e) => {
         errors.push("Passwords must match");
     }
 
-    if (errors.length > 0){
-        e.preventDefault()
-        error.innerText = errors.join(", ")
+    if (errors.length > 0) {
+        e.preventDefault();
+        error.innerText = errors.join(", ");
     } else {
-        error.innerHTML = ""
+        error.innerHTML = "";
+
+        // Create user object
+        const user = {
+            username: username.value,
+            email: email.value,
+            password: password.value
+        };
+
+        // Get existing users or initialize empty array
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+
+        // Add new user
+        users.push(user);
+
+        // Save back to localStorage
+        localStorage.setItem("users", JSON.stringify(users));
+
+        // Once successful, send to Homepage
+        window.location.href = "../Pages/HomePage.html";
     }
-}) // Prevents form from being submitted, if have errors
+});// Prevents form from being submitted, if have errors
 
 
 // Script for Sing up Modal
