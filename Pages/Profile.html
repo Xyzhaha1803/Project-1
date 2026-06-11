@@ -3,14 +3,79 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width = device-width ,initial-scale = 1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>EarlyBird Profile</title>
-        <link rel="stylesheet" href="Profile.css">
+        <link rel="stylesheet" href="../Style/Profile.css">
     </head>
 
     <body>
-        <script src="ProjectCodeJS.js"></script>
+        <nav class="navbar">
+            <p class="LogoName">EB</p>
+            <p class="navbaritem" id="home"><a href="HomePage.html">Home</a></p>
+            <p class="navbaritem" id="library"><a href="Library.html">Library</a></p>
+            <p class="navbaritem" id="games"><a href="Games.html">Games</a></p>
+        </nav>
+
+        <main class="Profile">
+
+            <!-- Profile head-->
+             <section class="ProfileHead">
+            <div class="ProfileHeader">
+                <div class="Avatar">
+                    <span class="AvatarInitial" id="avatarInitial">EB</span>
+                </div>
+                <div class="ProfileInfo">
+                    <h1 class="ProfileName" id="profileName">Admin</h1>
+                    <p class="ProfileEmail" id="profileEmail">Admin123@email.com</p>
+                    <button class="EditButton" id="editButton">Edit Profile</button>
+                </div>
+            </div>
+            </section>
+
+            <!-- Stats for activities -->
+            <section class="Stats">
+            <div class="StatsRow">
+                <div class="StatBox">
+                    <p class="StatNumber">3</p>
+                    <p class="StatLabel">Books Read</p>
+                </div>
+                <div class="StatBox">
+                    <p class="StatNumber">12</p>
+                    <p class="StatLabel">Puzzles Solved</p>
+                </div>
+                <div class="StatBox">
+                    <p class="StatNumber">45s</p>
+                    <p class="StatLabel">Memory Game time</p>
+                </div>
+                <div class="StatBox">
+                    <p class="StatNumber">9</p>
+                    <p class="StatLabel">Chess Wins</p>
+                </div>
+            </div>
+            </section>
+
+            <!-- Edit modal -->
+            <section class="edit-modal-container" id="edit_modal_container">
+            <div class="Edit-Modal">
+                <h2 class="EditModalTitle">Edit Profile</h2>
+                <div class="ModalErrors" id="ModalErrors"></div>
+                <div class="ModalRow">
+                    <label for="nameInput">Name</label>
+                    <input type="text" id="nameInput" placeholder="Your name">
+                </div>
+                <div class="ModalRow">
+                    <label for="emailInput">Email</label>
+                    <input type="email" id="emailInput" placeholder="Your email">
+                </div>
+                <div class="ModalButtons">
+                    <button class="SaveButton" id="saveButton">Save</button>
+                    <button class="CancelButton" id="cancelButton">Cancel</button>
+                </div>
+            </div>
+        </section>
+
+        </main>
+
+        <script src="../JS/Profile.js"></script>
     </body>
-
-
 </html>

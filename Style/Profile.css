@@ -1,0 +1,288 @@
+/* Font and background colour*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-size: 26px;
+    letter-spacing: 0.4px;
+    background-color: #f7f9f3;
+    color: #333333;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 150px;
+    padding: 20px 10px;
+
+    background-color: #ffffff;
+    border-right: 2px solid #e2e8f0;
+    border-radius: 0 12px 12px 0;
+    z-index: 1;
+}
+
+.LogoName {
+    font-size: 26px;
+    font-style: italic;
+    font-weight: bold;
+    color: #0284c7;
+    text-align: center;
+}
+
+.navbar *{
+    background-color: inherit;
+}
+
+.navbaritem{
+    width: 100%;
+    text-align: center;
+}
+
+.navbaritem a{
+    display: block;
+    text-decoration: none;
+    color: #4a5568;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px 6px;
+    border-radius: 8px;
+}
+
+.navbaritem a:hover{
+    background-color: #e0f2fe;
+    color: #0284c7;
+}
+
+/*Profile */
+.Profile{
+    margin-left: 150px;
+    padding: 30px 60px;
+    /* Enables cool padding if flex */
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+ 
+/* Profile Header*/
+.ProfileHeader{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+ 
+    background-color: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 20px;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.06);
+    padding: 30px 35px;
+}
+ 
+.Avatar{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: #0284c7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+ 
+.AvatarInitial{
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: transparent;
+}
+ 
+.ProfileInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+ 
+.ProfileName{
+    font-size: 36px;
+    font-weight: bold;
+    color: #1e3a8a;
+}
+ 
+.ProfileEmail{
+    font-size: 20px;
+    color: #64748b;
+}
+ 
+.EditButton{
+    margin-top: 8px;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #0284c7;
+    color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    width: fit-content;
+}
+ 
+.EditButton:hover {
+    background-color: #1e3a8a;
+}
+ 
+/* Stats Row */
+.StatsRow {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Fit 4 on one row*/
+    gap: 20px;
+}
+ 
+.StatBox {
+    background-color: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 20px;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.06);
+    padding: 28px 20px;
+    text-align: center;
+}
+ 
+.StatBox:hover {
+    transform: translateY(-4px);
+    box-shadow: 6px 8px 15px rgba(0, 0, 0, 0.1);
+}
+ 
+.StatNumber {
+    font-size: 40px;
+    font-weight: bold;
+    color: #0284c7;
+}
+ 
+.StatLabel {
+    font-size: 26px;
+    color: #64748b;
+    margin-top: 6px;
+}
+ 
+/* section */
+.SectionTitle {
+    font-size: 30px;
+    font-weight: bold;
+    color: #1e3a8a;
+    letter-spacing: 1px;
+}
+ 
+/* Edit modal */
+.edit-modal-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 10;
+ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+    /* Hide */
+    opacity: 0;
+    pointer-events: none;
+}
+ 
+.edit-modal-container.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+ 
+.Edit-Modal {
+    background-color: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 14px;
+    box-shadow: 6px 8px 15px rgba(0, 0, 0, 0.1);
+    padding: 36px 40px;
+    width: 90%;
+    max-width: 480px;
+ 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+ 
+.EditModalTitle {
+    font-size: 26px;
+    font-weight: bold;
+    color: #1e3a8a;
+    letter-spacing: 1px;
+}
+ 
+.ModalRow{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+ 
+.ModalRow label{
+    font-size: 20px;
+    font-weight: bold;
+    color: #4a5568;
+}
+ 
+.ModalRow input{
+    padding: 12px 16px;
+    font-size: 20px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    outline: none;
+    background-color: #f7f9f3;
+}
+ 
+.ModalErrors{
+    font-size: 18px;
+    color: #ef4444;
+    font-weight: 600;
+    min-height: 20px;
+}
+ 
+.ModalButtons{
+    display: flex;
+    gap: 12px;
+}
+ 
+.SaveButton{
+    padding: 10px 24px;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #0284c7;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+}
+ 
+.SaveButton:hover{
+    background-color: #1e3a8a;
+}
+ 
+.CancelButton{
+    padding: 10px 24px;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #f1f5f9;
+    color: #4a5568;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+ 
+.CancelButton:hover {
+    background-color: #e2e8f0;
+}
