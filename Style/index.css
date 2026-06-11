@@ -37,11 +37,13 @@ body {
     width: 100%;
     height: 90px;
 
+    padding: 5px 5px;
+
     background-color: #ffffff;
 
     justify-content: space-evenly;
     border-bottom: 2px solid #e2e8f0;
-    border-radius: 0 0 5px 5px;
+    border-radius: 0 0 12px 12px;
 }
 
 .navbar a{
@@ -126,6 +128,7 @@ main section{
 
 .Contact{
     margin-top: 60px;
+    font-size: 20px;
 }
 
 /* Error message*/
@@ -218,6 +221,7 @@ main section{
     background-color: #10b981;
     color: white;
 
+    border: #10b981;
     border-radius: 10px;
 }
 
@@ -251,7 +255,7 @@ main section{
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 
     max-height: 90vh; 
-    overflow-y: auto;
+    overflow-y: auto; /* Scroll if content overflow on ze y axis */
 }
 
 .login_modal h1 {
