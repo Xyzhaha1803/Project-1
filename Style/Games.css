@@ -1,24 +1,347 @@
- body {
-     background: url("./pokemon-bg.jpg");
-     background-size: cover;
-     font-family: arial, Helvetica, sans-serif;
-     text-align: center;
+/* Font and background colour*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-     text-align: center;
- }
+body {
+    font-size: 26px;
+    letter-spacing: 0.5px;
+    background-color: #f7f9f3;
+    color: #333333;
+}
 
- #board {
-     height: 532px;
-     width: 475px;
-     margin: 0 auto;
-     display: flex;
-     flex-wrap: wrap;
-     background-color: whitesmoke;
-     boder: 10px solid lightgrey;
- }
+/* Navbar*/
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
 
- .card {
-     height: 128px;
-     width: 90px;
-     margin: 2.5px;
- }
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 150px;
+    padding: 20px 10px;
+
+    background-color: #ffffff;
+    border-right: 2px solid #e2e8f0;
+    border-radius: 0 12px 12px 0;
+    z-index: 1;
+}
+
+.LogoName {
+    font-size: 26px;
+    font-style: italic;
+    font-weight: bold;
+    color: #0284c7;
+    text-align: center;
+}
+
+.navbar * { 
+    background-color: inherit; 
+}
+
+.navbaritem {
+    width: 100%;
+    text-align: center;
+}
+
+.navbaritem a {
+    display: block;
+    text-decoration: none;
+    color: #4a5568;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px 6px;
+    border-radius: 8px;
+}
+
+.navbaritem a:hover {
+    background-color: #e0f2fe;
+    color: #0284c7;
+}
+
+/* Games */
+.mainGames {
+    margin-left: 150px; /* Space for nav*/
+    padding: 30px 60px;
+}
+
+.PageTitle {
+    font-size: 36px;
+    font-weight: bold;
+    color: #1e3a8a;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+}
+
+.PageSubtitle {
+    font-size: 20px;
+    color: #64748b;
+    margin-bottom: 24px;
+}
+
+/* Game tabs */
+.GameTabs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.TabButton{
+    padding: 12px 28px;
+    font-size: 20px;
+    font-weight: 600;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #4a5568;
+}
+
+.TabButton:hover{
+    background-color: #e0f2fe;
+    color: #0284c7;
+    border-color: #0284c7;
+}
+
+.TabButton.active {
+    background-color: #0284c7;
+    color: #ffffff;
+    border-color: #0284c7;
+}
+
+/* Game panels */
+.GamePanel {
+    display: none;
+}
+
+.GamePanel.active {
+    display: block;
+}
+
+.GameHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.GameTitle {
+    font-size: 28px;
+    font-weight: bold;
+    color: #1e3a8a;
+}
+
+.GameControls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.GameStat {
+    font-size: 20px;
+    color: #64748b;
+}
+
+.GameStat b {
+    color: #1e3a8a;
+}
+
+.ResetButton {
+    padding: 10px 22px;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #0284c7;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.ResetButton:hover {
+    background-color: #1e3a8a;
+}
+
+/* ── Win Banner ── */
+.WinBanner {
+    display: none;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 20px 28px;
+    background-color: #dcfce7;
+    border: 2px solid #86efac;
+    border-radius: 14px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #166534;
+}
+
+.WinBanner.show {
+    display: flex;
+}
+
+/* ── MEMORY GAME ── */
+.MemoryGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 110px);
+    gap: 14px;
+}
+
+.MemoryCard {
+    width: 110px;
+    height: 110px;
+    cursor: pointer;
+    perspective: 600px;
+}
+
+.MemoryCardInner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease;
+    border-radius: 12px;
+}
+
+.MemoryCard.flipped .MemoryCardInner {
+    transform: rotateY(180deg);
+}
+
+.MemoryCardFront,
+.MemoryCardBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: bold;
+    border: 2px solid #e2e8f0;
+    box-shadow: 4px 4px 12px rgba(0,0,0,0.06);
+}
+
+.MemoryCardFront {
+    background-color: #0284c7;
+    color: #ffffff;
+    font-size: 28px;
+}
+
+.MemoryCardBack {
+    background-color: #ffffff;
+    transform: rotateY(180deg);
+}
+
+.MemoryCard.matched .MemoryCardFront,
+.MemoryCard.matched .MemoryCardBack {
+    border-color: #86efac;
+    background-color: #dcfce7;
+}
+
+/* ── PUZZLE GAME ── */
+.PuzzleGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 110px);
+    gap: 6px;
+    width: fit-content;
+}
+
+.PuzzleTile {
+    width: 110px;
+    height: 110px;
+    background-color: #0284c7;
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: bold;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 2px solid #e2e8f0;
+    box-shadow: 4px 4px 12px rgba(0,0,0,0.06);
+    transition: transform 0.1s ease;
+    user-select: none;
+}
+
+.PuzzleTile:hover {
+    transform: scale(1.04);
+}
+
+.PuzzleTile.empty {
+    background-color: #e0f2fe;
+    border: 2px dashed #bae6fd;
+    box-shadow: none;
+    cursor: default;
+}
+
+.PuzzleTile.empty:hover {
+    transform: none;
+}
+
+/* ── CHESS GAME ── */
+.ChessWrap {
+    overflow-x: auto;
+}
+
+.ChessBoard {
+    display: grid;
+    grid-template-columns: repeat(8, 70px);
+    grid-template-rows: repeat(8, 70px);
+    border: 3px solid #1e3a8a;
+    border-radius: 4px;
+    width: fit-content;
+}
+
+.ChessSquare {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.15s ease;
+}
+
+.ChessSquare.light { background-color: #f0d9b5; }
+.ChessSquare.dark  { background-color: #b58863; }
+
+.ChessSquare.selected {
+    background-color: #f6f669 !important;
+}
+
+.ChessSquare.valid-move {
+    background-color: #cdd16f !important;
+}
+
+.ChessSquare.valid-move::after {
+    content: '';
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: block;
+    position: absolute;
+}
+
+.ChessSquare {
+    position: relative;
+}
+
+.ChessHint {
+    margin-top: 16px;
+    font-size: 18px;
+    color: #64748b;
+}
