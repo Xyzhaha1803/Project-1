@@ -42,3 +42,21 @@ saveButton.addEventListener('click', () => {
 cancelButton.addEventListener('click', () => {
     edit_modal_container.classList.remove('show');
 })
+
+// LocalStorage for user input data
+document.addEventListener("DOMContentLoaded", () => {
+    const storedName = localStorage.getItem("username");
+    const storedEmail = localStorage.getItem("email");
+
+    const nameElement = document.getElementById("profileName");
+    const emailElement = document.getElementById("profileEmail");
+    const avatarElement = document.getElementById("avatar");
+
+    if (storedName) {
+        nameElement.textContent = storedName;
+    }
+
+    if (storedEmail) {
+        emailElement.textContent = storedEmail;
+    }
+});

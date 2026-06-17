@@ -9,6 +9,8 @@ const form = document.getElementById('form')
 const error = document.getElementById('errors')
 
 form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
     let errors = [];
 
     // Username Validation
@@ -36,29 +38,32 @@ form.addEventListener('submit', (e) => {
     } else {
         error.innerHTML = "";
 
-        // Create user object
+        // Creates user object
         const user = {
             username: username.value,
             email: email.value,
             password: password.value
         };
 
-        // Get existing users or initialize empty array
+        // Initialize empty array
         let users = JSON.parse(localStorage.getItem("users")) || [];
 
-        // Add new user
+        // push new user into ze array
         users.push(user);
 
-        // Save back to localStorage
+        // Save to localStorage
         localStorage.setItem("users", JSON.stringify(users));
 
+        localStorage.setItem("username", username.value);
+        localStorage.setItem("email", email.value);
+
         // Once successful, send to Homepage
-        window.location.href = "../Pages/HomePage.html";
+        window.location.href = "Pages/HomePage.html";
     }
 });// Prevents form from being submitted, if have errors
 
 
-// Script for Sing up Modal
+// Script for Sign up Modal
 const sign_open = document.getElementById('sign_open')
 const modal_container = document.getElementById('modal_container')
 const sign_close = document.getElementById('sign_close')
@@ -98,13 +103,14 @@ const loginusername_input = document.getElementById('loginusername_input')
 const loginpassword_input = document.getElementById('loginpassword_input')
 const login_errors = document.getElementById('login_errors')
 
+// Hardcoded classic
 let adminUser = "Admin" // Example; ask cher on how to do normally
 let adminPassword = "12345"
 
 login_form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    if (loginusername_input.value === adminUser && loginpassword_input.value === adminPassword){
+    if (loginusername_input.value === adminUser && loginpassword_input.value === adminPassword) {
         window.location.href = "Pages/HomePage.html"
     } else {
         login_errors.innerText = "Incorrect Username and/or Password";
