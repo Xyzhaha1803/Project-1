@@ -1,24 +1,84 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Pokemon Cards Match</title>
+        <title>EarlyBird Games</title>
         <link rel="stylesheet" href="../Style/Games.css">
     </head>
 
     <body>
-        <h2>Errors: <span id="errors">0</span></h2>
-        <div <script src="cards.js"></script>id="board">
-            <img id="0-0" class="card" src="water.jpg">
-            <img id="0-0" class="card" src="water.jpg">
-            <img id="0-0" class="card" src="water.jpg">
-            <img id="0-0" class="card" src="water.jpg">
-        </div>
+        <nav class="navbar">
+            <p class="LogoName">EB</p>
+            <p class="navbaritem"><a href="HomePage.html">Home</a></p>
+            <p class="navbaritem"><a href="Profile.html">Profile</a></p>
+            <p class="navbaritem"><a href="Library.html">Library</a></p>
+        </nav>
+
+        <main class="mainGames">
+
+            <h1 class="PageTitle">Games</h1>
+            <p class="PageSubtitle">Choose a game and start playing!</p>
+
+            <!-- Game tabs to switch between games-->
+            <div class="GameTabs">
+                <button class="TabButton active" data-game="memory">Memory Game</button> <!-- Active state so that page loads on it-->
+                <button class="TabButton" data-game="puzzle">Puzzle Game</button>
+                <button class="TabButton" data-game="chess">Chess Game</button>
+            </div>
+
+            <!-- Memory game -->
+            <section class="GamePanel active" id="game-memory">
+                <div class="GameHeader">
+                    <h2 class="GameTitle">Memory Game</h2>
+                    <div class="GameControls">
+                        <span class="GameStat">Moves: <b id="memoryMoves">0</b></span>
+                        <span class="GameStat">Matches: <b id="memoryMatches">0</b></span>
+                        <button class="ResetButton" id="memoryReset">Restart</button>
+                    </div>
+                </div>
+                <div class="MemoryGrid" id="memoryGrid"></div>
+                <div class="WinBanner" id="memoryWin">
+                    <p>You won!</p>
+                    <button class="ResetButton" id="memoryWinReset">Play Again</button>
+                </div>
+            </section>
+
+            <!-- Sliding puzzle game -->
+            <section class="GamePanel" id="game-puzzle">
+                <div class="GameHeader">
+                    <h2 class="GameTitle">Sliding Puzzle</h2>
+                    <div class="GameControls">
+                        <span class="GameStat">Moves: <b id="puzzleMoves">0</b></span>
+                        <button class="ResetButton" id="puzzleReset">Shuffle</button>
+                    </div>
+                </div>
+                <div class="PuzzleGrid" id="puzzleGrid"></div>
+                <div class="WinBanner" id="puzzleWin">
+                    <p>Puzzle solved!</p>
+                    <button class="ResetButton" id="puzzleWinReset">Play Again</button>
+                </div>
+            </section>
+
+            <!-- chess game -->
+            <section class="GamePanel" id="game-chess">
+                <div class="GameHeader">
+                    <h2 class="GameTitle">Chess</h2>
+                    <div class="GameControls">
+                        <span class="GameStat" id="chessTurn">White's turn</span>
+                        <button class="ResetButton" id="chessReset">Restart</button>
+                    </div>
+                </div>
+                <div class="ChessWrap">
+                    <div class="ChessBoard" id="chessBoard"></div>
+                </div>
+                <p class="ChessHint" id="chessStatus">Click any piece to select it, then click a square for it to move onto.</p>
+                <p class="ChessTutorial">Don't know how to play chess?<a href="https://www.youtube.com/watch?v=YdnvlntAQH8" target="_blank"> Watch this video!</a></p>
+            </section>
+
+        </main>
 
         <script src="../JS/Games.js"></script>
     </body>
 </html>
-
-
-  

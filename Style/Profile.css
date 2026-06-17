@@ -87,7 +87,7 @@ body{
     padding: 30px 35px;
 }
  
-.Avatar{
+.AvatarPfp{
     width: 90px;
     height: 90px;
     border-radius: 50%;
@@ -98,7 +98,7 @@ body{
     flex-shrink: 0;
 }
  
-.AvatarInitial{
+.Avatar{
     font-size: 32px;
     font-weight: bold;
     color: #ffffff;

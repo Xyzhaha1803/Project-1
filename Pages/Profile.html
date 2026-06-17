@@ -18,44 +18,46 @@
 
         <main class="Profile">
 
-            <!-- Profile head-->
-             <section class="ProfileHead">
-            <div class="ProfileHeader">
-                <div class="Avatar">
-                    <span class="AvatarInitial" id="avatarInitial">EB</span>
+            <!-- Profile Header -->
+            <section class="ProfileHead">
+                <div class="ProfileHeader">
+                    <div class="AvatarPfp">
+                        <span class="Avatar" id="avatar">EB</span>
+                    </div>
+                    <div class="ProfileInfo">
+                        <h1 class="ProfileName" id="profileName">Admin</h1>
+                        <p class="ProfileEmail" id="profileEmail">Admin123@email.com</p>
+                        <button class="EditButton" id="editButton">Edit Profile</button>
+                    </div>
                 </div>
-                <div class="ProfileInfo">
-                    <h1 class="ProfileName" id="profileName">Admin</h1>
-                    <p class="ProfileEmail" id="profileEmail">Admin123@email.com</p>
-                    <button class="EditButton" id="editButton">Edit Profile</button>
-                </div>
-            </div>
             </section>
 
-            <!-- Stats for activities -->
+            <!-- Stats -->
             <section class="Stats">
-            <div class="StatsRow">
-                <div class="StatBox">
-                    <p class="StatNumber">3</p>
-                    <p class="StatLabel">Books Read</p>
+                <div class="StatsRow">
+                    <div class="StatBox">
+                        <p class="StatNumber">3</p>
+                        <p class="StatLabel">Books Read</p>
+                    </div>
+                    <div class="StatBox">
+                        <p class="StatNumber">12</p>
+                        <p class="StatLabel">Puzzles Solved</p>
+                    </div>
+                    <div class="StatBox">
+                        <p class="StatNumber">45s</p>
+                        <p class="StatLabel">Memory Game Time</p>
+                    </div>
+                    <div class="StatBox">
+                        <p class="StatNumber">9</p>
+                        <p class="StatLabel">Chess Wins</p>
+                    </div>
                 </div>
-                <div class="StatBox">
-                    <p class="StatNumber">12</p>
-                    <p class="StatLabel">Puzzles Solved</p>
-                </div>
-                <div class="StatBox">
-                    <p class="StatNumber">45s</p>
-                    <p class="StatLabel">Memory Game time</p>
-                </div>
-                <div class="StatBox">
-                    <p class="StatNumber">9</p>
-                    <p class="StatLabel">Chess Wins</p>
-                </div>
-            </div>
             </section>
 
-            <!-- Edit modal -->
-            <section class="edit-modal-container" id="edit_modal_container">
+        </main>
+
+        <!-- Edit Modal — outside main, same as index modals -->
+        <section class="edit-modal-container" id="edit_modal_container">
             <div class="Edit-Modal">
                 <h2 class="EditModalTitle">Edit Profile</h2>
                 <div class="ModalErrors" id="ModalErrors"></div>
@@ -73,8 +75,6 @@
                 </div>
             </div>
         </section>
-
-        </main>
 
         <script src="../JS/Profile.js"></script>
     </body>

@@ -1,4 +1,4 @@
-// Script for the edit modal [Broke]
+// Script for the edit modal
 const editButton = document.getElementById('editButton');
 const edit_modal_container = document.getElementById('edit_modal_container');
 const saveButton = document.getElementById('saveButton');
@@ -6,7 +6,6 @@ const cancelButton = document.getElementById('cancelButton');
 
 const profileName = document.getElementById('profileName');
 const profileEmail = document.getElementById('profileEmail');
-const avatarInitial = document.getElementById('avatarInitial');
 
 const nameInput = document.getElementById('nameInput');
 const emailInput = document.getElementById('emailInput');
