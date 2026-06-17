@@ -1,22 +1,18 @@
-// ════════════════════════════════
-//  TAB SWITCHING
-// ════════════════════════════════
+// Switch between the different games using the games tab
 const tabButtons = document.querySelectorAll('.TabButton');
 const gamePanels = document.querySelectorAll('.GamePanel');
 
-tabButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
+tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
         tabButtons.forEach(b => b.classList.remove('active'));
         gamePanels.forEach(p => p.classList.remove('active'));
-        btn.classList.add('active');
-        document.getElementById('game-' + btn.dataset.game).classList.add('active');
+        button.classList.add('active');
+        document.getElementById('game-' + button.dataset.game).classList.add('active');
     });
 });
 
 
-// ════════════════════════════════
-//  MEMORY GAME
-// ════════════════════════════════
+// Memory game logic
 const memoryEmojis = ['🐶','🐱','🐭','🐹','🐰','🦊','🐻','🐼'];
 let memoryCards = [...memoryEmojis, ...memoryEmojis];
 let memoryFlipped = [];
@@ -100,9 +96,7 @@ document.getElementById('memoryWinReset').addEventListener('click', buildMemoryG
 buildMemoryGame();
 
 
-// ════════════════════════════════
-//  SLIDING PUZZLE
-// ════════════════════════════════
+// puzzle logic
 let puzzleTiles = [];
 let puzzleMoveCount = 0;
 const puzzleGrid = document.getElementById('puzzleGrid');
@@ -120,7 +114,6 @@ function buildPuzzle() {
 }
 
 function shufflePuzzle(tiles) {
-    // Shuffle by making random valid moves to guarantee solvability
     let emptyIdx = tiles.indexOf(0);
     for (let i = 0; i < 300; i++) {
         const neighbors = getNeighbors(emptyIdx);
@@ -176,9 +169,7 @@ document.getElementById('puzzleWinReset').addEventListener('click', buildPuzzle)
 buildPuzzle();
 
 
-// ════════════════════════════════
-//  CHESS GAME
-// ════════════════════════════════
+// chess game logic [2 player only + winning condition broke]
 const PIECES = {
     wK:'♔', wQ:'♕', wR:'♖', wB:'♗', wN:'♘', wP:'♙',
     bK:'♚', bQ:'♛', bR:'♜', bB:'♝', bN:'♞', bP:'♟'
@@ -186,13 +177,14 @@ const PIECES = {
 
 let board = [];
 let selectedSquare = null;
-let currentTurn = 'w'; // w or b
+let currentTurn = 'w'; // White always starts first
 let validMoves = [];
 
 const chessBoard = document.getElementById('chessBoard');
 const chessTurnEl = document.getElementById('chessTurn');
 const chessStatusEl = document.getElementById('chessStatus');
 
+// inital chess board
 function initBoard() {
     board = [
         ['bR','bN','bB','bQ','bK','bB','bN','bR'],

@@ -169,7 +169,7 @@ body {
     background-color: #1e3a8a;
 }
 
-/* ── Win Banner ── */
+/* Win Banner*/
 .WinBanner {
     display: none;
     align-items: center;
@@ -188,18 +188,18 @@ body {
     display: flex;
 }
 
-/* ── MEMORY GAME ── */
+/* Memory game */
 .MemoryGrid {
     display: grid;
     grid-template-columns: repeat(4, 110px);
-    gap: 14px;
+    cursor: pointer;
+    gap: 20px;
 }
 
 .MemoryCard {
     width: 110px;
     height: 110px;
-    cursor: pointer;
-    perspective: 600px;
+    perspective: 500px; /* Allow rotating 3D transformation props*/
 }
 
 .MemoryCardInner {
@@ -208,7 +208,7 @@ body {
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.4s ease;
-    border-radius: 12px;
+    border-radius: 10px;
 }
 
 .MemoryCard.flipped .MemoryCardInner {
@@ -248,7 +248,7 @@ body {
     background-color: #dcfce7;
 }
 
-/* ── PUZZLE GAME ── */
+/* PUZZLE GAME*/
 .PuzzleGrid {
     display: grid;
     grid-template-columns: repeat(3, 110px);
@@ -256,7 +256,7 @@ body {
     width: fit-content;
 }
 
-.PuzzleTile {
+.PuzzleTile{
     width: 110px;
     height: 110px;
     background-color: #0284c7;
@@ -274,7 +274,7 @@ body {
     user-select: none;
 }
 
-.PuzzleTile:hover {
+.PuzzleTile:hover{
     transform: scale(1.04);
 }
 
@@ -289,7 +289,7 @@ body {
     transform: none;
 }
 
-/* ── CHESS GAME ── */
+/* CHESS GAME */
 .ChessWrap {
     overflow-x: auto;
 }
@@ -340,8 +340,19 @@ body {
     position: relative;
 }
 
-.ChessHint {
+.ChessHint{
     margin-top: 16px;
     font-size: 18px;
     color: #64748b;
+}
+
+.ChessTutorial {
+    margin-top: 16px;
+    font-size: 18px;
+    color: #64748b;
+}
+
+.ChessTutorial a{
+    text-decoration: none;
+    color: #0d3f85;
 }
