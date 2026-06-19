@@ -62,6 +62,7 @@ function renderBookCard(book) {
     const coverUrl = book.formats['image/jpeg'] || null;
 
     // Finding plain text URL to read to get ze data
+    // https://gutendex.com/books/27424/
     const textUrl = book.formats['text/plain; charset=us-ascii']
         || book.formats['text/plain; charset=utf-8']
         || book.formats['text/plain']
@@ -100,17 +101,55 @@ function openReader(title, textUrl) {
     reader_Overlay.classList.add('show');
     document.body.style.overflow = 'hidden';
 
-    fetch(textUrl)
-        .then(res => res.text())
+    fetchBookText(textUrl)
         .then(text => {
+            // Strip Project Gutenberg's license header/footer
+            const cleaned = stripGutenbergBoilerplate(text); // Function below
             // Show the first 20,000 characters so it loads fast
-            const preview = text.slice(0, 20000);
+            const preview = cleaned.slice(0, 20000);
             reader_Content.textContent = preview;
             reader_Content.style.fontSize = fontSizeRange.value + 'px';
         })
         .catch(() => {
             reader_Content.innerHTML = '<p class="reader-loading">Could not load this book.</p>';
         });
+}
+
+// gutenberg.org doesn't send CORS headers on its text files, only Gutendex's
+// own API does — so a direct fetch(textUrl) gets blocked by the browser
+function fetchBookText(textUrl) {
+    return fetch(textUrl)
+        .then(res => {
+            if (!res.ok) throw new Error('Direct fetch failed');
+            return res.text();
+        })
+        .catch(() => {
+            const proxied = `https://corsproxy.io/?url=${encodeURIComponent(textUrl)}`;
+            return fetch(proxied).then(res => {
+                if (!res.ok) throw new Error('Proxy fetch failed');
+                return res.text();
+            });
+        });
+}
+
+// Removes Project Gutenberg's standard license text so the actual book is read
+function stripGutenbergBoilerplate(text) {
+    const startMarker = /\*\*\*\s*START OF (THE|THIS) PROJECT GUTENBERG EBOOK.*?\*\*\*/is;
+    const endMarker = /\*\*\*\s*END OF (THE|THIS) PROJECT GUTENBERG EBOOK.*?\*\*\*/is;
+
+    const startMatch = text.match(startMarker);
+    const endMatch = text.match(endMarker);
+
+    let start = 0;
+    if (startMatch) {
+        const idx = text.indexOf(startMatch[0]) + startMatch[0].length;
+        start = text.indexOf('\n', idx);
+        if (start === -1) start = idx;
+    }
+
+    const end = endMatch ? text.indexOf(endMatch[0]) : text.length;
+
+    return text.slice(start, end).trim();
 }
 
 //Close ze reader 
