@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EarlyBird Puzzle</title>
+    <link rel="stylesheet" href="../Style/Puzzle.css">
+</head>
+
+<body>
+
+    <main>
+
+        <!-- Image picker slider -->
+        <section class="ImagePicker">
+            <h2 class="PickerTitle">Choose a Picture</h2>
+
+            <div class="Slider">
+                <button class="SliderArrow" id="sliderPrev" aria-label="Previous image">&#10094;</button>
+
+                <div class="SliderTrack" id="sliderTrack">
+                    <img class="SlideImg" src="../Assets/Pictures/Puzzle1.jpg" data-index="0" alt="Picture 1">
+                    <img class="SlideImg" src="../Assets/Pictures/Puzzle2.jpg" data-index="1" alt="Picture 2">
+                    <img class="SlideImg" src="../Assets/Pictures/Puzzle3.jpg" data-index="2" alt="Picture 3">
+                    <img class="SlideImg" src="../Assets/Pictures/Puzzle4.jpg" data-index="3" alt="Picture 4">
+                    <img class="SlideImg" src="../Assets/Pictures/Puzzle5.jpg" data-index="4" alt="Picture 5">
+                </div>
+
+                <button class="SliderArrow" id="sliderNext" aria-label="Next image">&#10095;</button>
+            </div>
+
+            <div class="SliderDots" id="sliderDots"></div>
+
+            <button class="ResetButton" id="useImageButton">Use This Picture</button>
+        </section>
+
+        <!-- Puzzle -->
+        <section id="game-puzzle">
+            <div class="GameHeader">
+                <h2 class="GameTitle">Picture Puzzle</h2>
+                <div class="GameControls">
+                    <span class="GameStat">Placed: <b id="puzzlePlaced">0</b> / <b id="puzzleTotal">30</b></span>
+                    <button class="ResetButton" id="puzzleReset">Shuffle</button>
+                    <button class="BackButton" id="backTo">Back</button>
+                </div>
+            </div>
+
+            <div class="PuzzleArea">
+                <div class="PuzzleBoard" id="puzzleBoard"></div>
+
+                <div class="PuzzleTray" id="puzzleTray"></div>
+            </div>
+
+            <div class="WinBanner" id="puzzleWin">
+                <p>Puzzle successfully solved!</p>
+                <button class="ResetButton" id="puzzleWinReset">Play Again!</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../JS/Slider.js"></script>
+    <script src="../JS/Puzzle.js"></script>
+</body>
+
+</html>
