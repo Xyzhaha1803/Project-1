@@ -152,7 +152,7 @@ document.getElementById('puzzleWinReset').addEventListener('click', startPuzzle)
 
 
 document.getElementById('backTo').addEventListener('click', () => {
-    window.location.href = "Games.html";
+    window.location.href = "Games.html"
 })
 
 startPuzzle()
