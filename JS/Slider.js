@@ -1,85 +1,79 @@
-// ════════════════════════════════
-//  jQuery IMAGE SLIDER
-// ════════════════════════════════
-// $(...) is jQuery's selector function — same job as document.querySelector(),
-// but it returns a jQuery-wrapped object with extra built-in methods
-// (.addClass, .removeClass, .css, .on, .each, etc) instead of a raw DOM node.
+// Wait until the HTML fully loads
+document.addEventListener('DOMContentLoaded', () => {
 
-// $(document).ready() waits for the HTML to fully load before running any
-// jQuery code — the jQuery equivalent of a DOMContentLoaded listener.
-$(document).ready(function () {
+    // Get all the slide images
+    const slides = document.querySelectorAll('.SlideImg');
+    const dotsContainer = document.getElementById('sliderDots');
 
-    // $('.SlideImg') grabs ALL five <img> elements at once as a single
-    // jQuery collection. No manual for-loop needed to act on every one.
-    const $slides = $('.SlideImg')
-    const $dotsContainer = $('#sliderDots')
+    let currentIndex = 0; // First image
+    const totalSlides = slides.length;
 
-    let currentIndex = 0
-    const totalSlides = $slides.length // jQuery collections have .length like arrays
+    // Creates one dot for each slide
+    slides.forEach((slide, i) => {
+        const dot = document.createElement('div');
 
-    // Build one dot per slide using jQuery's .each() looping helper
-    $slides.each(function (i) {
-        // $('<div>') creates a brand new jQuery-wrapped element in memory
-        const $dot = $('<div></div>')
-            .addClass('SliderDot')
-            .attr('data-index', i)
+        dot.classList.add('SliderDot');
+        dot.dataset.index = i;
 
-        // .appendTo() inserts the new element into the page
-        $dot.appendTo($dotsContainer)
-    })
+        dotsContainer.appendChild(dot);
+    });
 
-    const $dots = $('.SliderDot')
+    // Get the dots after creating them
+    const dots = document.querySelectorAll('.SliderDot');
 
-    // Shows whichever slide matches `index`, hides the rest
+    // Show one slide and hide the others
     function showSlide(index) {
-        // .removeClass() / .addClass() are jQuery's way of toggling CSS classes
-        // — same outcome as classList.remove()/add() in vanilla JS
-        $slides.removeClass('active')
-        $dots.removeClass('active')
 
-        // .eq(index) picks the single element at that position in the collection
-        $slides.eq(index).addClass('active')
-        $dots.eq(index).addClass('active')
+        slides.forEach(slide => {
+            slide.classList.remove('active');
+        });
 
-        currentIndex = index
+        dots.forEach(dot => {
+            dot.classList.remove('active');
+        });
+
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+
+        currentIndex = index;
     }
 
-    // ── Arrow button clicks ──
-    // .on('click', handler) attaches a click listener — jQuery's version of
-    // addEventListener('click', handler)
-    $('#sliderNext').on('click', function () {
-        const nextIndex = (currentIndex + 1) % totalSlides
-        showSlide(nextIndex)
-    })
+    // Next button
+    document.getElementById('sliderNext').addEventListener('click', () => {
+        const nextIndex = (currentIndex + 1) % totalSlides;
+        showSlide(nextIndex);
+    });
 
-    $('#sliderPrev').on('click', function () {
-        const prevIndex = (currentIndex - 1 + totalSlides) % totalSlides
-        showSlide(prevIndex)
-    })
+    // Previous button
+    document.getElementById('sliderPrev').addEventListener('click', () => {
+        const prevIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        showSlide(prevIndex);
+    });
 
-    // ── Dot navigation ──
-    // Event delegation isn't needed here since dots already exist by this point,
-    // but .on() still works the same as a direct click binding
-    $dots.on('click', function () {
-        // `this` inside a jQuery .on() callback is the raw DOM element clicked.
-        // $(this) re-wraps it so we can use jQuery methods on it again.
-        const clickedIndex = $(this).attr('data-index')
-        showSlide(parseInt(clickedIndex))
-    })
+    // Dot nav
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            const clickedIndex = Number(dot.dataset.index);
+            showSlide(clickedIndex);
+        });
+    });
 
-    // ── "Use This Picture" button ──
-    // Reads which slide is currently active and hands its image path to Puzzle.js
-    $('#useImageButton').on('click', function () {
-        const $activeSlide = $('.SlideImg.active')
-        const chosenImageSrc = $activeSlide.attr('src')
+    // Picture button
+    document.getElementById('useImageButton').addEventListener('click', () => {
 
-        // Call the puzzle's own start function (defined in Puzzle.js),
-        // passing in whichever image the user picked
+        const activeSlide = document.querySelector('.SlideImg.active');
+
+        if (!activeSlide) return;
+
+        const chosenImageSrc = activeSlide.src;
+
+        // Call function from Puzzle.js
         if (typeof startPuzzleWithImage === 'function') {
-            startPuzzleWithImage(chosenImageSrc)
+            startPuzzleWithImage(chosenImageSrc);
         }
-    })
+    });
 
-    // Show the first slide and its dot as soon as the page loads
-    showSlide(0)
-})
+    // Show first slide when page loads [INDEX = 0]
+    showSlide(0);
+
+});
