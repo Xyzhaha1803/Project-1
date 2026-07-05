@@ -1,11 +1,13 @@
-/*Font size and background colour*/
+/* Font size and background colour */
 * {
-    font-size: 30px;
-    letter-spacing: 1px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.4px;
 }
 
-/* Background colour */
 body {
+    font-size: 26px;
     background-color: #f7f9f3;
     color: #333333;
 }
@@ -18,148 +20,250 @@ body {
     color: #0284c7;
 }
 
-.Logo{
-    width: 100px;
-    height: 100px;
-    margin-top: 10px;
-    margin-left: 30px;
+.Logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
 }
 
-/* Nav */
-.navbar{
+/* NavBar */
+.navbar {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    align-items: center;
     position: fixed;
-    z-index: 1;
+    z-index: 5;
     top: 0;
     left: 0;
     width: 100%;
-    height: 90px;
-
-    padding: 5px 5px;
+    height: 80px;
+    padding: 0 32px;
+    gap: 8px;
 
     background-color: #ffffff;
-
-    justify-content: space-evenly;
     border-bottom: 2px solid #e2e8f0;
     border-radius: 0 0 12px 12px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+    justify-content: space-evenly;
 }
 
-.navbar a{
+.navbar a {
     text-decoration: none;
     color: #4a5568;
-    font-weight: 600;
+    font-weight: bold;
+    font-size: 24px;
 }
 
-.navbaritem a{
+.navbaritem a {
     display: block;
     color: #4a5568;
+    font-weight: bold;
+    padding: 8px 14px;
     border-radius: 8px;
 }
 
-.navbaritem a:hover{
+.navbaritem a:hover {
     background-color: #e0f2fe;
     color: #0284c7;
 }
 
-/* Scrolling and navbar fix*/
-html{
+#sign_open {
+    background-color: #10b981;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#sign_open:hover {
+    background-color: #059669;
+}
+
+/* Scrolling */
+html {
     scroll-behavior: smooth;
-    scroll-padding-top: 110px;
+    scroll-padding-top: 100px;
 }
 
-/* Making space for nav bar so no overlap happens */
-main{
-    margin-top: 75px;
-    padding: 20px;
+/* Main */
+main {
+    margin-top: 80px;
+    padding: 0;
 }
 
-main section{
-    margin-top: 50px; /* Consistent space between sections */
+main section {
+    padding: 70px 80px;
 }
 
-/* Sections */
-.Welcome{
-    font-size: 40px;
+/* Welcome section */
+.Welcome {
+    font-size: 42px;
     text-align: center;
     font-weight: bold;
     color: #1e3a8a;
+    background-color: #ffffff;
+    border-bottom: 2px solid #e2e8f0;
+    padding: 90px 80px;
+    line-height: 1.3;
 }
 
-/*Discover text*/
+/* Discover section */
 .Discover {
     text-align: center;
-    padding: 5px;
-    margin-left: auto;
-    margin-right: auto;
+    color: #64748b;
+    font-size: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+    padding: 50px 20px;
 }
 
-/* list */
-.list { 
-    margin-top: 10px;
-    padding-left: 20px;
-}
-
-/* About text */
-.About{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 40px;
-}
-
-.AboutPara{
-    flex: 1; /* Flex box space*/
-}
-
-.AboutPara b{
-    display: block;
-    margin-bottom: 10px;
-}
-
-.AboutImg{
-    flex: 0.5; /* Flex box space*/
-    max-width: 350px;
-    height: auto;
-    border: 2px solid #555555;
-    border-radius: 16px;
-}
-
-.Contact{
-    margin-top: 60px;
+/* Offer section*/
+.Offer {
+    background-color: #ffffff;
+    border-top: 2px solid #e2e8f0;
+    border-bottom: 2px solid #e2e8f0;
     font-size: 20px;
 }
 
-/* Error message*/
-#errors{
+.Offer div {
+    max-width: 700px;
+    margin: 0 auto;
+    font-weight: 600;
+    color: #1e3a8a;
+    font-size: 22px;
+}
+
+.list {
+    margin-top: 18px;
+    padding-left: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.list li {
+    color: #4a5568;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+/*About section*/
+.About {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.AboutPara {
+    flex: 1;
+    font-size: 20px;
+    line-height: 1.7;
+    color: #4a5568;
+}
+
+.AboutPara b {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 24px;
+    color: #1e3a8a;
+}
+
+.AboutImg {
+    flex: 0 0 300px;
+    width: 300px;
+    height: auto;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.08);
+    object-fit: cover;
+}
+
+/* Contact section*/
+.Contact {
+    background-color: #ffffff;
+    border-top: 2px solid #e2e8f0;
+    font-size: 20px;
+}
+
+.Contact div {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.Contact p {
+    font-weight: 600;
+    color: #1e3a8a;
+    margin-bottom: 16px;
+    font-size: 22px;
+}
+
+.Contact ol {
+    padding-left: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.Contact ol li p {
+    font-weight: 400;
+    color: #4a5568;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+/* Error message */
+#errors {
     color: #ef4444;
     font-weight: bold;
     margin-bottom: 15px;
+    font-size: 16px;
 }
 
-/* Form Style*/
-#form form > div {
+/* Sign up form */
+#form > div {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
 }
+
 #form button {
     width: 100%;
-    max-width: 200px;
+    max-width: 150px;
     height: 45px;
     margin-top: 10px;
+    margin-bottom: 10px;
     cursor: pointer;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
 }
 
 #form input {
+    width: 100%;
     max-width: 400px;
     height: 45px;
     padding: 10px;
-    border: 1px solid #b0b0b0;
-    border-radius: 0 4px 4px 0;
+    font-size: 16px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 0 8px 8px 0;
     box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+#form input:focus {
+    border-color: #0284c7;
 }
 
 #form label {
@@ -170,127 +274,129 @@ main section{
     width: 50px;
     height: 45px;
     background-color: #555555;
-    border-radius: 4px;
+    border-radius: 8px 0 0 8px;
+    flex-shrink: 0;
 }
 
-/* Modal */
-.modal-container{
-    /* Wrap the entire screen */
+/* Sign up Modal */
+.modal-container {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.4); /* Transulent */
+    background-color: rgba(0, 0, 0, 0.4);
     height: 100vh;
     width: 100vw;
     z-index: 10;
 
-    /* Middle of the screen*/
     display: flex;
     align-items: center;
     justify-content: center;
 
-    opacity: 0; /* Hiding Modal */
-    pointer-events: none; /* Avoid Modal from disallowing clicking */
-
+    opacity: 0;
+    pointer-events: none;
     transition: opacity 0.3s ease;
 }
 
-.modal-container.show{
+.modal-container.show {
     opacity: 1;
     pointer-events: auto;
 }
 
-.modal{
+.modal {
     background-color: #ffffff;
     max-width: 450px;
     width: 90%;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-
-    max-height: 90vh; 
+    padding: 36px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    max-height: 90vh;
     overflow-y: auto;
 }
 
 .modal h1 {
-    font-size: 40px;
+    font-size: 32px;
     margin-bottom: 20px;
     text-align: center;
+    color: #1e3a8a;
+    font-weight: bold;
 }
 
-#sign_open{
-    background-color: #10b981;
-    color: white;
-
-    border: #10b981;
-    border-radius: 10px;
-}
-
-.login-modal-container{
-    /* Wrap the entire screen */
+/* Login Modal */
+.login-modal-container {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.4); /* Transulent */
+    background-color: rgba(0, 0, 0, 0.4);
     height: 100vh;
     width: 100vw;
     z-index: 10;
 
-    /* Middle of the screen*/
     display: flex;
     align-items: center;
     justify-content: center;
 
-    opacity: 0; /* Hiding Modal */
-    pointer-events: none; /* Avoid Modal from disallowing clicking */
-
+    opacity: 0;
+    pointer-events: none;
     transition: opacity 0.3s ease;
+}
+
+#login_modal_container.show {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .login_modal {
     background-color: #ffffff;
     max-width: 450px;
     width: 90%;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-
-    max-height: 90vh; 
-    overflow-y: auto; /* Scroll if content overflow on ze y axis */
+    padding: 36px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 .login_modal h1 {
-    font-size: 40px;
+    font-size: 32px;
     margin-bottom: 20px;
     text-align: center;
+    color: #1e3a8a;
+    font-weight: bold;
 }
 
-#login_modal_container.show{
-    opacity: 1;
-    pointer-events: auto;
-}
-
-/* Login form style*/
-#login_form form > div {
+/* Login form*/
+#login_form > div {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
 }
+
 #login_form button {
     width: 100%;
     max-width: 200px;
     height: 45px;
     margin-top: 10px;
     cursor: pointer;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
 }
 
 #login_form input {
+    width: 100%;
     max-width: 400px;
     height: 45px;
     padding: 10px;
-    border: 1px solid #b0b0b0;
-    border-radius: 0 4px 4px 0;
+    font-size: 16px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 0 8px 8px 0;
     box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+#login_form input:focus {
+    border-color: #0284c7;
 }
 
 #login_form label {
@@ -301,11 +407,13 @@ main section{
     width: 50px;
     height: 45px;
     background-color: #555555;
-    border-radius: 4px;
+    border-radius: 8px 0 0 8px;
+    flex-shrink: 0;
 }
 
-#login_errors{
+#login_errors {
     color: #ef4444;
     font-weight: bold;
     margin-bottom: 15px;
+    font-size: 16px;
 }
