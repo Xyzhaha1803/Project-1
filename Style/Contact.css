@@ -1,0 +1,271 @@
+/* Font and background color*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.4px;
+}
+
+body {
+    font-size: 26px;
+    background-color: #f7f9f3;
+    color: #333333;
+}
+
+/* Logo */
+.LogoName {
+    font-size: 30px;
+    font-style: italic;
+    font-weight: bold;
+    color: #0284c7;
+}
+
+.Logo {
+    width: 80px;
+    height: 100%;
+
+    margin-top: 10px;
+}
+
+/* Navbar*/
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 20px;
+    
+    z-index: 1;
+
+    border-bottom: 2px solid #e2e8f0;
+    border-radius: 0 0 2px 2px;
+}
+
+.LogoName {
+    margin-top: 20px;
+}
+
+.ContactPage {
+    font-size: 30px;
+    font-style: italic;
+    font-weight: bold;
+    color: #024f76;
+
+    margin-top: 20px;
+}
+
+/* Back Button */
+#BackButton {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-left: 20px;
+    
+    background-color: #e2e8f0;
+    color: #2b3036;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+
+#BackButton:hover {
+    background-color: #cbd5e1;
+    color: #1e293b;
+}
+
+#BackButton:active {
+    transform: scale(0.9);
+}
+
+/* Form */
+#ContactFormContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 20px;
+    gap: 12px;
+
+    margin-top: 40px;
+    margin-bottom: 20px; /* Leaves space to scroll a bit at bottom, looks better ig*/
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 600px;
+    height: 100%;
+
+    border: 2px solid #1e3a8a;
+    border-radius: 8px;
+}
+
+.FormContainerChild{
+    font-size: 26px;
+
+    margin-right: auto;
+
+    padding: 5px;
+}
+
+.FormContainerChild input {
+    width: 100%;
+    max-width: 400px;
+    height: 45px;
+    padding: 10px;
+    font-size: 20px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 8px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.FormContainerChild select {
+    width: 100%;
+    max-width: 400px;
+    height: 45px;
+    padding: 10px;
+    font-size: 20px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 8px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+#inquirysection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#inquiry {
+    width: 100% !important; /* just override any other css*/
+    height: 150px;
+    min-height: 100px;
+    padding: 10px;
+    resize: vertical;
+}
+
+#complaintsection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    display: none;
+}
+
+#complaint {
+    width: 100% !important; /* just override any other css*/
+    height: 150px;
+    min-height: 100px;
+    padding: 10px;
+    resize: vertical;
+}
+
+#reviewsection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.starrating {
+    display: flex;
+    flex-direction: row-reverse; /* Flips the 5-1 to 1-5*/
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.starratingLabel {
+    font-size: 20px;
+    padding: 10px 0px;
+    margin-top: 10px;
+}
+
+/* Hide the radio circles */
+.starrating input {
+    display: none;
+}
+
+.starrating label {
+    font-size: 50px;
+    color: #ccc; 
+    cursor: pointer;
+    transition: color 0.5s ease-in-out; /* Simple transition for color*/
+}
+
+/* Turn stars gold when 1) checked 2) hovered over 3) checked with its preceding stars*/
+.starrating input:checked ~ label,
+.starrating label:hover,
+.starrating label:hover ~ label {
+    color: #ffca28;
+}
+
+#comment {
+    width: 100% !important; /* just override any other css*/
+    height: 150px;
+    min-height: 100px;
+    padding: 10px;
+    resize: vertical;
+}
+
+#othersection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+#otherText {
+    margin-top: 20px;
+
+    width: 100% !important; /* just override any other css*/
+    height: 150px;
+    min-height: 100px;
+    padding: 10px;
+    resize: vertical;
+}
+
+/* Button */
+#submitbutton {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+#submitbutton button {
+    width: 100%;
+    background-color: #1e3a8a;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+
+#submitbutton button:hover {
+    background-color: #2756d8;
+}
+
+#submitbutton button:active {
+    transform: scale(0.9);
+}
+
+/* JS stuff to change the form based on the select form*/
+#inquirysection, 
+#complaintsection, 
+#reviewsection, 
+#othersection {
+    display: none; 
+}
+
+/* JS injects this class to turn the block on when matching dropdown */
+.FormContainerChild.show {
+    display: flex !important;
+}

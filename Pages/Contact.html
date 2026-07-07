@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EarlyBird Profile</title>
+    <link rel="stylesheet" href="../Style/Contact.css">
+</head>
+
+<body>
+
+    <main>
+        <nav class="navbar">
+            <p class="LogoName">EarlyBird</p>
+            <p class="ContactPage">Contact Page</p>
+            <img class="Logo" src="../Assets/Pictures/PixelLogoFrame.png" alt="EarlyBird Logo">
+        </nav>
+
+        <button type="button" id="BackButton">Back</button>
+
+        <form id="ContactFormContainer">
+            <div class="FormContainerChild">
+                <p>Contact US</p>
+            </div>
+
+            <div class="FormContainerChild">
+                <label for="name">Name: </label>
+                <input type="text" id="name" name="name" placeholder="Name" required>
+            </div>
+
+            <div class="FormContainerChild">
+                <label for="email">Email: </label>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+            </div>
+
+            <div class="FormContainerChild">
+                <label for="type">Message Type: </label>
+                <select id="type" name="type" required>
+                    <option value="">-- Reason for Contact --</option>
+                    <option value="inquiry">Inquiry</option>
+                    <option value="complaint">Complaint</option>
+                    <option value="review">Review</option>
+                    <option value='other'>Other</option>
+                </select>
+            </div>
+
+            <div class="FormContainerChild" id="inquirysection">
+                <label for="inquiry">Inquiry: </label>
+                <textarea id="inquiry" name="inquiry" placeholder="Reason for inquiry"></textarea>
+            </div>
+
+            <div class="FormContainerChild" id="complaintsection">
+                <label for="complaint">Complaint: </label>
+                <textarea id="complaint" name="complaint" placeholder="Reason for Complaint"></textarea>
+            </div>
+
+            <div class="FormContainerChild" id="reviewsection">
+                <label>Review: </label>
+                <p class="starratingLabel">Star Rating:</p>
+                <div class="starrating">
+                    <!-- 5 Star -->
+                    <input type="radio" id="star5" name="rating" value="5">
+                    <label for="star5" title="5 stars">★</label>
+
+                    <!-- 4 Star -->
+                    <input type="radio" id="star4" name="rating" value="4">
+                    <label for="star4" title="4 stars">★</label>
+
+                    <!-- 3 Star -->
+                    <input type="radio" id="star3" name="rating" value="3">
+                    <label for="star3" title="3 stars">★</label>
+
+                    <!-- 2 Star -->
+                    <input type="radio" id="star2" name="rating" value="2">
+                    <label for="star2" title="2 stars">★</label>
+
+                    <!-- 1 Star -->
+                    <input type="radio" id="star1" name="rating" value="1">
+                    <label for="star1" title="1 star">★</label>
+                </div>
+
+                <label for="comment">Comments: </label>
+                <textarea id="comment" name="comment" placeholder="Comment!"></textarea>
+            </div>
+
+            <div class="FormContainerChild" id="othersection">
+                <label for="otherText">Other: </label>
+                <textarea id="otherText" name="otherText" placeholder="Type here!"></textarea>
+            </div>
+
+            <div class="FormButton" id="submitbutton">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+
+    </main>
+    <script src="../JS/Contact.js"></script>
+</body>
+
+</html>
