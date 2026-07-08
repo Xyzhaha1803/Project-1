@@ -63,6 +63,7 @@ body {
     font-weight: bold;
     padding: 8px 14px;
     border-radius: 8px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .navbaritem a:hover {
@@ -190,9 +191,91 @@ main section {
     object-fit: cover;
 }
 
+/* Learn more section */
+.LearnMore {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: none;
+    border-top: 2px solid #e2e8f0;
+}
+ 
+.LearnMorecontent {
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+ 
+.LearnMoreheader h1 {
+    font-size: 24px;
+    line-height: 1.7;
+    color: #1e3a8a;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+ 
+.LearnMoreheader p {
+    font-size: 20px;
+    color: #64748b;
+    line-height: 1.5;
+}
+ 
+.LearnMorelinks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    width: 100%;
+}
+ 
+.LearnMorecard {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px;
+    text-decoration: none;
+    color: #4a5568;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+ 
+.LearnMorecard:hover {
+    transform: translateY(-4px);
+    border-color: #0284c7;
+    box-shadow: 0 10px 15px rgba(2, 132, 199, 0.08);
+}
+ 
+.LearnMorecard h2 {
+    font-size: 22px;
+    color: #1e3a8a;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+ 
+.LearnMorecard p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+ 
+.cardaction {
+    font-size: 16px;
+    font-weight: bold;
+    color: #0284c7;
+    transition: color 0.2s ease;
+}
+ 
+.LearnMorecard:hover .cardaction {
+    color: #0369a1;
+}
+
 /* Contact section*/
 .Contact {
-    background-color: #ffffff;
+    color: #64748b;
     border-top: 2px solid #e2e8f0;
     font-size: 20px;
 }
