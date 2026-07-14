@@ -116,3 +116,10 @@ login_form.addEventListener('submit', (e) => {
         login_errors.innerText = "Incorrect Username and/or Password";
     }
 })
+
+// Script for the dashboard sign up
+const StartButton = document.getElementById('StartButton')
+
+StartButton.addEventListener('click', () => {
+    login_modal_container.classList.add('show')
+})
