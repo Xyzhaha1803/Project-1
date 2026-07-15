@@ -11,11 +11,17 @@
 
 <body>
     <nav class="navbar">
+
+        <div class="navleft">
+        <img class="Logo" src="Assets/Pictures/PixelLogoFrame.png" alt="EarlyBird Logo">
         <p class="LogoName">EarlyBird</p>
-        <p class="navbaritem"><a href="#offer">What We Offer</a></p>
-        <p class="navbaritem"><a href="#about">About Us</a></p>
-        <p class="navbaritem"><a href="#contact">Contact Us</a></p>
+        </div>
+
+        <div class="navright">
         <button id="sign_open">Sign up</button>
+        <button id="sign_open2">Login</button>
+        </div>
+
         <!-- Sign up modal/pop up -->
         <section class="modal-container" id="modal_container">
             <div class="modal">
@@ -108,17 +114,19 @@
             </div>
         </section>
 
-        <img class="Logo" src="Assets/Pictures/PixelLogoFrame.png" alt="EarlyBird Logo">
     </nav>
 
     <main class="classIndex">
-        <section class="Welcome">
+        <section class="Welcome" id="welcome">
             <p>
-                Welcome to Early Bird, a Home for Improvement and Progress
+                <span>Welcome to Early Bird,</span>
+                <span>a Home for</span>
+                <span>Improvement and Progress</span>
             </p>
         </section>
 
-        <section class="Discover">
+        <section class="Discover" id="discover">
+            <h1>Discover yourself</h1>
             <p>
                 Learn and improve yourself from various exciting activities from solving puzzles and games, reading mind
                 racking
@@ -150,11 +158,35 @@
             <p class="AboutPara">
                 <b>About Us </b>
                 We are a kids learning platform tailored to help children, between the ages of 6-10,
-                helping them learn valuable skills from crticial thinking to problem solving.
+                helping them learn valuable skills from critical thinking to problem solving.
                 Created from the works of a Project aiming to provide real world usage and actual implementations.
             </p>
 
-            <img class="AboutImg" src="Assets/Pictures/kiddeathstare.jpg">
+            <div class="AboutUsImgs">
+                <div class="AboutUsImgsItem">
+                    <img src="Assets/Pictures/Person1.jpg" alt="Group Member 1">
+                    <div class="MemberInfo">
+                    <span class="name">Sahil Paija</span>
+                    <span class="role">Project Worker</span>
+                    </div>
+                </div>
+
+                <div class="AboutUsImgsItem">
+                    <img src="Assets/Pictures/Person2.jpg" alt="Group Member 2">
+                    <div class="MemberInfo">
+                    <span class="name">Sanjiv Paudel </span>
+                    <span class="role">Project Worker</span>
+                    </div>
+                </div>
+
+                <div class="AboutUsImgsItem">
+                    <img src="Assets/Pictures/Person3.jpg" alt="Group Member 3">
+                    <div class="MemberInfo">
+                    <span class="name">Puspa Gautam</span>
+                    <span class="role">Project Worker</span>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section class="LearnMore" id="learnmore">
@@ -186,6 +218,19 @@
                 </div>
             </div>
         </section>
+        
+        <section class="StartNow" id="startnow">
+            <div class="StartText">
+                <h1>Ready to Begin?</h1>
+                <p>Create your own personalised account now to start on your journey towards better learning.</p>
+                <button class="StartButton" id="StartButton">Access your personal Dashboard</button>
+            </div>
+
+            <div class="StartImg">
+                <img src="Assets/Pictures/KidOnBooks.jpg" alt="Kid on Books" loading="lazy">
+            </div>
+
+        </section>
 
         <section class="Contact" id="contact">
             <div>
@@ -205,19 +250,6 @@
                     </li>
                 </ol>
             </div>
-        </section>
-        
-        <section class="StartNow" id="startnow">
-            <div class="StartText">
-                <h1>Ready to Begin?</h1>
-                <p>Create your own personalised account now to start on your journey towards better learning.</p>
-                <button class="StartButton" id="StartButton">Access your personal Dashboard</button>
-            </div>
-
-            <div class="StartImg">
-                <img src="Assets/Pictures/KidOnBooks.jpg" alt="Kid on Books" loading="lazy">
-            </div>
-
         </section>
     </main>
 

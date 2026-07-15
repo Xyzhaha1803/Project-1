@@ -103,6 +103,8 @@ const loginusername_input = document.getElementById('loginusername_input')
 const loginpassword_input = document.getElementById('loginpassword_input')
 const login_errors = document.getElementById('login_errors')
 
+const sign_open2 = document.getElementById('sign_open2')
+
 // Hardcoded classic
 let adminUser = "Admin" // Example; ask cher on how to do normally
 let adminPassword = "12345"
@@ -115,6 +117,10 @@ login_form.addEventListener('submit', (e) => {
     } else {
         login_errors.innerText = "Incorrect Username and/or Password";
     }
+})
+
+sign_open2.addEventListener('click', () => {
+    login_modal_container.classList.add('show')
 })
 
 // Script for the dashboard sign up
