@@ -110,7 +110,7 @@ main section {
     font-size: 42px;
     text-align: center;
     font-weight: bold;
-    color: #FF6B6B;
+    color: #38bdf8;
     padding: 145px 80px;
     line-height: 1.3;
 
@@ -136,13 +136,13 @@ main section {
 /* Image slider for the background*/
 @keyframes imageSlider {
     0%, 25%, 100% {
-        background-image: url('../Assets/Pictures/BackgroundImg1.jpg');
+        background-image: url('../Assets/Pictures/BackgroundImg2-Compressed.jpg');
     }
     33%, 58% {
-        background-image: url('../Assets/Pictures/BackgroundImg2.jpg');
+        background-image: url('../Assets/Pictures/BackgroundImg3-Compressed.jpg');
     }
     66%, 91% {
-        background-image: url('../Assets/Pictures/BackgroundImg3.jpg');
+        background-image: url('../Assets/Pictures/BackgroundImg4-Compressed.jpg');
     }
 }
 
