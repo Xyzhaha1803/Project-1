@@ -110,7 +110,7 @@ main section {
     font-size: 42px;
     text-align: center;
     font-weight: bold;
-    color: #f3a4a4;
+    color: #ffffff;
     padding: 145px 80px;
     line-height: 1.3;
 
@@ -136,7 +136,7 @@ main section {
 /* Image slider for the background*/
 @keyframes imageSlider {
     0%, 25%, 100% {
-        background-image: url('../Assets/Pictures/BackgroundImg2-Compressed.jpg');
+        background-image: url('../Assets/Pictures/BackgroundImg5-Compressed.jpg');
     }
     33%, 58% {
         background-image: url('../Assets/Pictures/BackgroundImg3-Compressed.jpg');
